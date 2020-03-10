@@ -4,17 +4,30 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1.102-alpine3.11 AS build
-RUN apk add --no-cache nodejs nodejs-npm
+#--------------------------------------------------
+FROM node:13.10.1-alpine3.11 as build-frontend
+WORKDIR /usr/src/app
+COPY ["ClientApp/package*.json", "./"]
+RUN npm install
 
+COPY ["ClientApp/", "./"]
+RUN pwd && ls -hal ./
+RUN npm run build -- --prod
+
+#--------------------------------------------------
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1.102-alpine3.11 AS build
+ENV Configuration Release
+ENV DOCKER_BUILD True
 # TODO: Docker cache w. dotnet restore?
 COPY . .
 RUN dotnet build
 RUN dotnet test
 
+#--------------------------------------------------
 FROM build AS publish
-RUN dotnet publish -c Release -o /app
+RUN dotnet publish -o /app
 
+#--------------------------------------------------
 FROM base AS runtime
 COPY --from=build /app .
 ENTRYPOINT ["dotnet", "angular.dll"]

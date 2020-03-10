@@ -42,6 +42,8 @@ dotnet new aurelia -n aurelia
 
 ## References
 
+- [Create an ASP.NET Core 3.0 Angular SPA project with Docker support](https://medium.com/swlh/create-an-asp-net-core-3-0-angular-spa-web-application-with-docker-support-86e8c15796aa)
+
 ### ServiceStack
 
 - ServiceStack [NetCoreTemplates](https://github.com/NetCoreTemplates)

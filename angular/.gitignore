@@ -1,6 +1,37 @@
 
-# Created by https://www.gitignore.io/api/node,sonar,csharp,sonarqube,visualstudio,visualstudiocode
-# Edit at https://www.gitignore.io/?templates=node,sonar,csharp,sonarqube,visualstudio,visualstudiocode
+# Created by https://www.gitignore.io/api/node,sonar,csharp,angular,sonarqube,visualstudio,visualstudiocode
+# Edit at https://www.gitignore.io/?templates=node,sonar,csharp,angular,sonarqube,visualstudio,visualstudiocode
+
+### Angular ###
+## Angular ##
+# compiled output
+dist/
+tmp/
+app/**/*.js
+app/**/*.js.map
+
+# dependencies
+node_modules/
+bower_components/
+
+# IDEs and editors
+.idea/
+
+# misc
+.sass-cache/
+connect.lock/
+coverage/
+libpeerconnection.log/
+npm-debug.log
+testem.log
+typings/
+
+# e2e
+e2e/*.js
+e2e/*.map
+
+#System Files
+.DS_Store/
 
 ### Csharp ###
 ## Ignore Visual Studio temporary files, build results, and
@@ -157,7 +188,6 @@ nCrunchTemp_*
 AutoTest.Net/
 
 # Web workbench (sass)
-.sass-cache/
 
 # Installshield output folder
 [Ee]xpress/
@@ -279,7 +309,6 @@ FakesAssemblies/
 
 # Node.js Tools for Visual Studio
 .ntvs_analysis.dat
-node_modules/
 
 # Visual Studio 6 build log
 *.plg
@@ -395,7 +424,6 @@ build/Release
 jspm_packages/
 
 # TypeScript v1 declaration files
-typings/
 
 # TypeScript cache
 *.tsbuildinfo
@@ -429,7 +457,6 @@ typings/
 .nuxt
 
 # rollup.js default build output
-dist/
 
 # Uncomment the public line if your project uses Gatsby
 # https://nextjs.org/blog/next-9-1#public-directory-support
@@ -453,7 +480,6 @@ dist/
 .dynamodb/
 
 # Temporary folders
-tmp/
 temp/
 
 ### Sonar ###
@@ -639,4 +665,4 @@ temp/
 
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 
-# End of https://www.gitignore.io/api/node,sonar,csharp,sonarqube,visualstudio,visualstudiocode
+# End of https://www.gitignore.io/api/node,sonar,csharp,angular,sonarqube,visualstudio,visualstudiocode
