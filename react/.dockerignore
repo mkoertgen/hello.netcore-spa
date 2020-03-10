@@ -1,7 +1,7 @@
 .git/
 
-# Created by https://www.gitignore.io/api/node,sonar,csharp,sonarqube,visualstudio,visualstudiocode
-# Edit at https://www.gitignore.io/?templates=node,sonar,csharp,sonarqube,visualstudio,visualstudiocode
+# Created by https://www.gitignore.io/api/node,react,sonar,csharp,sonarqube,visualstudio,visualstudiocode
+# Edit at https://www.gitignore.io/?templates=node,react,sonar,csharp,sonarqube,visualstudio,visualstudiocode
 
 ### Csharp ###
 ## Ignore Visual Studio temporary files, build results, and
@@ -457,6 +457,19 @@
 **/tmp/
 **/temp/
 
+### react ###
+**/.DS_*
+**/**/*.backup.*
+**/**/*.back.*
+
+**/node_modules
+
+**/*.sublime*
+
+**/psd
+**/thumb
+**/sketch
+
 ### Sonar ###
 #Sonar generated dir
 .sonar/
@@ -640,4 +653,4 @@
 
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 
-# End of https://www.gitignore.io/api/node,sonar,csharp,sonarqube,visualstudio,visualstudiocode
+# End of https://www.gitignore.io/api/node,react,sonar,csharp,sonarqube,visualstudio,visualstudiocode

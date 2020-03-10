@@ -13,7 +13,7 @@ RUN npm install
 COPY ["ClientApp/", "./"]
 #RUN npm run lint
 #RUN npm run test:ci
-RUN npm run build:prod
+RUN npm run build
 
 #--------------------------------------------------
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1.102-alpine3.11 AS build

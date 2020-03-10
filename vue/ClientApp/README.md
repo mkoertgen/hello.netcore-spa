@@ -1,4 +1,4 @@
-# ASP.NET Core Vue Starter
+# vue
 
 ## Project setup
 ```
