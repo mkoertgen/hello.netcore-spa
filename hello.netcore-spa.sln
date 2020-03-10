@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "angular", "angular\angular.csproj", "{436D7DD0-157E-43D7-85F4-C6322F42DEE0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{629DA274-5538-4FFB-B9BC-B9B958ACB83E}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		package-lock.json = package-lock.json
+		package.json = package.json
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{436D7DD0-157E-43D7-85F4-C6322F42DEE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{436D7DD0-157E-43D7-85F4-C6322F42DEE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{436D7DD0-157E-43D7-85F4-C6322F42DEE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{436D7DD0-157E-43D7-85F4-C6322F42DEE0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9054ABD2-DB41-4D88-867A-4985F46646CF}
+	EndGlobalSection
+EndGlobal
