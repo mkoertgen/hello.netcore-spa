@@ -11,11 +11,13 @@ COPY ["ClientApp/package*.json", "./"]
 RUN npm install
 
 COPY ["ClientApp/", "./"]
-RUN pwd && ls -hal ./
-RUN npm run build -- --prod
+#RUN npm run lint
+#RUN npm run test:ci
+RUN npm run build:prod
 
 #--------------------------------------------------
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1.102-alpine3.11 AS build
+WORKDIR /usr/src/app
 ENV Configuration Release
 ENV DOCKER_BUILD True
 # TODO: Docker cache w. dotnet restore?
@@ -26,8 +28,10 @@ RUN dotnet test
 #--------------------------------------------------
 FROM build AS publish
 RUN dotnet publish -o /app
+RUN mkdir -p /app/ClientApp/dist/
+COPY --from=build-frontend /usr/src/app/dist/ /app/ClientApp/dist/
 
 #--------------------------------------------------
 FROM base AS runtime
-COPY --from=build /app .
+COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "angular.dll"]
