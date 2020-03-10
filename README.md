@@ -39,3 +39,11 @@ dotnet new aurelia -n aurelia
 ```
 
 **NOTE:** At the time of writing the command fails and needs some manual rework & cleanup. Also, the template only supports `netcoreapp2.2` but can probably manually updated to `netcoreapp3.1`.
+
+## References
+
+### ServiceStack
+
+- ServiceStack [NetCoreTemplates](https://github.com/NetCoreTemplates)
+
+**NOTE:** Ruled out here because too opinionated (gulp, complete own stack, diverging from Microsoft standards).

@@ -1,22 +1,20 @@
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim AS base
+# https://hub.docker.com/_/microsoft-dotnet-core-aspnet/
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1.2-alpine3.11 as base
 WORKDIR /app
 EXPOSE 80
+EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
-WORKDIR /src
-COPY ["./vue.csproj", "app/"]
-RUN dotnet restore "app/vue.csproj"
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1.102-alpine3.11 AS build
+RUN apk add --no-cache nodejs nodejs-npm
+
+# TODO: Docker cache w. dotnet restore?
 COPY . .
-RUN apt-get update -yq 
-RUN apt-get install curl gnupg -yq 
-RUN curl -sL https://deb.nodesource.com/setup_13.x | bash -
-RUN apt-get install -y nodejs
-RUN dotnet build "/src/vue.csproj" -c Release -o /app/build
+RUN dotnet build
+RUN dotnet test
 
 FROM build AS publish
-RUN dotnet publish "/src/vue.csproj" -c Release -o /app/publish
+RUN dotnet publish -c Release -o /app
 
 FROM base AS runtime
-WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build /app .
 ENTRYPOINT ["dotnet", "vue.dll"]

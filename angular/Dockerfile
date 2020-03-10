@@ -17,4 +17,4 @@ RUN dotnet publish -c Release -o /app
 
 FROM base AS runtime
 COPY --from=build /app .
-ENTRYPOINT ["dotnet", "aurelia.dll"]
+ENTRYPOINT ["dotnet", "angular.dll"]
