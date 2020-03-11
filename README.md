@@ -2,6 +2,12 @@
 
 Comparing dotnet core 3+ fullstack/spa options
 
+- [Angular](https://angular.io/)
+- [React](https://reactjs.org/)
+- [Vue](https://vuejs.org/)
+- [Aurelia](https://angular.io/)
+- [Svelte](https://svelte.dev/)
+
 ## Angular
 
 ![Angular](img/angular.jpg)
@@ -39,6 +45,19 @@ dotnet new aurelia -n aurelia
 ```
 
 **NOTE:** At the time of writing the command fails and needs some manual rework & cleanup. Also, the template only supports `netcoreapp2.2` but can probably manually updated to `netcoreapp3.1`.
+
+## Svelte
+
+Bootstrap using
+
+```console
+dotnet new react -n svelte
+cd svelte
+rmdir ClientApp
+npx degit sveltejs/template-webpack ClientApp
+cd ClientApp
+npm install
+```
 
 ## References
 
