@@ -1,7 +1,8 @@
+using System;
+using System.Linq;
+using System.Net.NetworkInformation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,10 +24,10 @@ namespace svelte
 
             services.AddControllersWithViews();
 
-            // In production, the React files will be served from this directory
+            // In production, the Svelte files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
-                configuration.RootPath = "ClientApp/build";
+                configuration.RootPath = "ClientApp/public";
             });
         }
 
@@ -63,9 +64,23 @@ namespace svelte
 
                 if (env.IsDevelopment())
                 {
-                    spa.UseReactDevelopmentServer(npmScript: "start");
+                    if (PortInUse(8081))
+                        spa.UseProxyToSpaDevelopmentServer("http://localhost:8081");
+                    else
+                    {
+                        // TODO: React dev server does not work for svelte
+                        //spa.UseReactDevelopmentServer("start");
+                        throw new InvalidOperationException("No svelte dev server available. Start with `ClientApp> npm start`");
+                    }
                 }
             });
+        }
+
+        private static bool PortInUse(int  port)
+        {
+            var ipProperties = IPGlobalProperties.GetIPGlobalProperties();
+            var ipEndPoints = ipProperties.GetActiveTcpListeners();
+            return ipEndPoints.Any(endPoint => endPoint.Port == port);
         }
     }
 }

@@ -48,6 +48,8 @@ dotnet new aurelia -n aurelia
 
 ## Svelte
 
+![Svelte](img/svelte.jpg)
+
 Bootstrap using
 
 ```console

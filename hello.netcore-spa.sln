@@ -20,6 +20,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "vue", "vue\vue.csproj", "{8
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "aurelia", "aurelia\aurelia.csproj", "{96588E82-1403-47A8-A6A4-ABD9C9420657}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "svelte", "svelte\svelte.csproj", "{3BA48E17-6D24-4748-9C10-580AB1E9C923}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,10 @@ Global
 		{96588E82-1403-47A8-A6A4-ABD9C9420657}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96588E82-1403-47A8-A6A4-ABD9C9420657}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96588E82-1403-47A8-A6A4-ABD9C9420657}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BA48E17-6D24-4748-9C10-580AB1E9C923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BA48E17-6D24-4748-9C10-580AB1E9C923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BA48E17-6D24-4748-9C10-580AB1E9C923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BA48E17-6D24-4748-9C10-580AB1E9C923}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
