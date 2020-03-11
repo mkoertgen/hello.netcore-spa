@@ -1,3 +1,5 @@
+using System.Linq;
+using System.Net.NetworkInformation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
@@ -66,9 +68,20 @@ namespace angular
 
                 if (env.IsDevelopment())
                 {
-                    spa.UseAngularCliServer("start");
+                    if (PortInUse(4200))
+                        spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
+                    else
+                        spa.UseAngularCliServer("start");
                 }
             });
         }
+
+        private static bool PortInUse(int  port)
+        {
+            var ipProperties = IPGlobalProperties.GetIPGlobalProperties();
+            var ipEndPoints = ipProperties.GetActiveTcpListeners();
+            return ipEndPoints.Any(endPoint => endPoint.Port == port);
+        }
     }
+
 }

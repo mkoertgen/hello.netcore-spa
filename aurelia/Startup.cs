@@ -1,7 +1,8 @@
 
+using System.Linq;
+using System.Net.NetworkInformation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -49,15 +50,19 @@ namespace aurelia
                 app.UseHttpsRedirection();
             }
             app.UseStaticFiles();
-            app.UseSpaStaticFiles();
+
+            if (!env.IsDevelopment())
+            {
+                app.UseSpaStaticFiles();
+            }
 
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller}/{action=Index}/{id?}");
+                    "default",
+                    "{controller}/{action=Index}/{id?}");
             });
 
             app.UseSpa(spa =>
@@ -66,9 +71,20 @@ namespace aurelia
 
                 if (env.IsDevelopment())
                 {
-                    spa.UseAureliaCliServer();
+                    if (PortInUse(8080))
+                        spa.UseProxyToSpaDevelopmentServer("http://localhost:8080");
+                    else
+                        spa.UseAureliaCliServer();
                 }
             });
         }
+
+        private static bool PortInUse(int port)
+        {
+            var ipProperties = IPGlobalProperties.GetIPGlobalProperties();
+            var ipEndPoints = ipProperties.GetActiveTcpListeners();
+            return ipEndPoints.Any(endPoint => endPoint.Port == port);
+        }
+
     }
 }

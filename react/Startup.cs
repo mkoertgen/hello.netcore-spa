@@ -1,6 +1,7 @@
+using System.Linq;
+using System.Net.NetworkInformation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -63,9 +64,19 @@ namespace react
 
                 if (env.IsDevelopment())
                 {
-                    spa.UseReactDevelopmentServer(npmScript: "start");
+                    if (PortInUse(3000))
+                        spa.UseProxyToSpaDevelopmentServer("http://localhost:3000");
+                    else
+                        spa.UseReactDevelopmentServer(npmScript: "start");
                 }
             });
+        }
+
+        private static bool PortInUse(int  port)
+        {
+            var ipProperties = IPGlobalProperties.GetIPGlobalProperties();
+            var ipEndPoints = ipProperties.GetActiveTcpListeners();
+            return ipEndPoints.Any(endPoint => endPoint.Port == port);
         }
     }
 }

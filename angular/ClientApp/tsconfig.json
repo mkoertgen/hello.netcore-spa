@@ -21,5 +21,7 @@
     "strictInjectionParameters": true,
     // workaround for NG6002: https://stackoverflow.com/a/60291072/2592915
     //"enableIvy": false
+    // workaround for ng not yet supporting compiler >= 3.8: https://stackoverflow.com/a/60331627/2592915
+    "disableTypeScriptVersionCheck": true
   }
 }
