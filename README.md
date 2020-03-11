@@ -42,6 +42,7 @@ dotnet new aurelia -n aurelia
 
 ## References
 
+- [Developing SPAs with ASP.NET Core v3.0](https://www.dotnetcurry.com/aspnet-core/1525/angular-react-vuejs-svelte-spa-aspnet-core-3)
 - [Create an ASP.NET Core 3.0 Angular SPA project with Docker support](https://medium.com/swlh/create-an-asp-net-core-3-0-angular-spa-web-application-with-docker-support-86e8c15796aa)
 
 ### ServiceStack
