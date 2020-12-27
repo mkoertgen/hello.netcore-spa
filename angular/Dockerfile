@@ -1,11 +1,11 @@
-# https://hub.docker.com/_/microsoft-dotnet-core-aspnet/
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1.2-alpine3.11 as base
+# https://hub.docker.com/_/microsoft-dotnet-aspnet
+FROM mcr.microsoft.com/dotnet/aspnet:5.0.1-alpine3.12-amd64 as base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
 #--------------------------------------------------
-FROM node:13.10.1-alpine3.11 as build-frontend
+FROM node:15.5.0-alpine3.12 as build-frontend
 WORKDIR /usr/src/app
 COPY ["ClientApp/package*.json", "./"]
 RUN npm install
@@ -16,7 +16,8 @@ COPY ["ClientApp/", "./"]
 RUN npm run build
 
 #--------------------------------------------------
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1.102-alpine3.11 AS build
+# https://hub.docker.com/_/microsoft-dotnet-sdk/
+FROM mcr.microsoft.com/dotnet/sdk:5.0.101-alpine3.12-amd64 AS build
 WORKDIR /usr/src/app
 ENV Configuration Release
 ENV DOCKER_BUILD True
