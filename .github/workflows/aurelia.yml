@@ -1,10 +1,13 @@
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+    paths:
+      - "aurelia/*"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: docker-compose build react
+      - run: docker-compose build aurelia
