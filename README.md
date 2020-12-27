@@ -16,6 +16,8 @@ Bootstrap using `dotnet new angular -n angular`
 
 ## React
 
+![Build status](https://github.com/mkoertgen/hello.netcore-spa/workflows/.github/workflows/docker-build.yml/badge.svg)
+
 ![React](img/react.jpg)
 
 Bootstrap using `dotnet new react -n react`
