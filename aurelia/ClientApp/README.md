@@ -2,7 +2,7 @@
 
 This project is bootstrapped by [aurelia-cli](https://github.com/aurelia/cli).
 
-For more information, go to https://aurelia.io/docs/cli/webpack
+For more information, go to [Aurelia Webpack](https://aurelia.io/docs/cli/webpack)
 
 ## Run dev app
 
