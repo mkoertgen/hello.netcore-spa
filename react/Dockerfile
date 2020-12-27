@@ -17,7 +17,7 @@ RUN npm run build
 
 #--------------------------------------------------
 # https://hub.docker.com/_/microsoft-dotnet-sdk/
-FROM mcr.microsoft.com/dotnet/core/sdk:5.0.101-alpine3.12-amd64 AS build
+FROM mcr.microsoft.com/dotnet/sdk:5.0.101-alpine3.12-amd64 AS build
 WORKDIR /usr/src/app
 ENV Configuration Release
 ENV DOCKER_BUILD True
