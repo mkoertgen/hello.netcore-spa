@@ -4,7 +4,12 @@ on:
     branches:
       - main
     paths:
-      - "react/*"
+      - "react/**"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "react/**"
 
 jobs:
   build:

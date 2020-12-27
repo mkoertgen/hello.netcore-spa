@@ -4,7 +4,12 @@ on:
     branches:
       - main
     paths:
-      - "vue/*"
+      - "vue/**"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "vue/**"
 
 jobs:
   build:

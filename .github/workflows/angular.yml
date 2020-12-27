@@ -4,7 +4,12 @@ on:
     branches:
       - main
     paths:
-      - "angular/*"
+      - "angular/**"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "angular/**"
 
 jobs:
   build:

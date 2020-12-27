@@ -4,7 +4,12 @@ on:
     branches:
       - main
     paths:
-      - "svelte/*"
+      - "svelte/**"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "svelte/**"
 
 jobs:
   build:
