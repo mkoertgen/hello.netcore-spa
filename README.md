@@ -1,6 +1,6 @@
 # hello.netcore-spa
 
-Comparing dotnet core 3+ fullstack/spa options
+Comparing fullstack/spa options with .net 5
 
 - [Angular](https://angular.io/)
 - [React](https://reactjs.org/)
