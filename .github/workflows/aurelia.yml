@@ -1,8 +1,8 @@
 name: aurelia
 on:
   push:
-    branches:
-      - main
+    # branches:
+    #   - main
     paths:
       - "aurelia/*"
 
