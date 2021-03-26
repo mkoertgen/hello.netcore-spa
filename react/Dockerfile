@@ -1,5 +1,5 @@
 # https://hub.docker.com/_/microsoft-dotnet-aspnet
-FROM mcr.microsoft.com/dotnet/aspnet:5.0.1-alpine3.12-amd64 as base
+FROM mcr.microsoft.com/dotnet/aspnet:5.0.2-alpine3.12-amd64 as base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
@@ -17,7 +17,7 @@ RUN npm run build
 
 #--------------------------------------------------
 # https://hub.docker.com/_/microsoft-dotnet-sdk/
-FROM mcr.microsoft.com/dotnet/sdk:5.0.101-alpine3.12-amd64 AS build
+FROM mcr.microsoft.com/dotnet/sdk:5.0.102-alpine3.12-amd64 AS build
 WORKDIR /usr/src/app
 ENV Configuration Release
 ENV DOCKER_BUILD True
