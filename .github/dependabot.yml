@@ -1,0 +1,57 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/.github/workflows"
+    batch-size: 20
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "npm"
+    directory: "/angular/ClientApp"
+    batch-size: 20
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "nuget"
+    directory: "/angular"
+    batch-size: 20
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "npm"
+    directory: "/aurelia/ClientApp"
+    batch-size: 20
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "nuget"
+    directory: "/aurelia"
+    batch-size: 20
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "npm"
+    directory: "/react/ClientApp"
+    batch-size: 20
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "nuget"
+    directory: "/react"
+    batch-size: 20
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "npm"
+    directory: "/svelte/ClientApp"
+    batch-size: 20
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "nuget"
+    directory: "/svelte"
+    batch-size: 20
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "npm"
+    directory: "/vue/ClientApp"
+    batch-size: 20
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "nuget"
+    directory: "/vue"
+    batch-size: 20
+    schedule:
+      interval: "weekly"
