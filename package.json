@@ -1,14 +1,19 @@
 {
-    "name": "hello.netcore-spa",
-    "version": "1.0.0",
-    "description": "Comparing dotnet core 3+ fullstack/spa options",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "gitignore-to-dockerignore": "^1.0.0"
-    }
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install",
+    "husky": "husky",
+    "commit": "cz",
+    "check:spell": "cspell"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "commitizen": "^4.2.6",
+    "cspell": "^6.17.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.2",
+    "gitignore-to-dockerignore": "^1.0.0"
+  }
 }
